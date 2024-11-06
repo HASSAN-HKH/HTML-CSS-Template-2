@@ -1,0 +1,772 @@
+body{
+    font-family: "Work Sans", sans-serif;
+    width: fit-content;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.center-by-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    width:100%;
+    height:70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header .pop{
+    position: relative;
+    width:34px;
+    height:24px;
+    margin-right: 13%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    /* justify-content: flex-end */
+}
+
+header .pop span{
+    width:100%;
+    height:2px;
+    display: inline-block;
+    background-color: black;
+    transition: .5s;
+}
+
+.pop span:nth-child(3){
+    height:3px;
+}
+
+.pop span:nth-child(2){
+    width:50%;
+}
+
+.pop:hover span:nth-child(2){
+    width:100%;  
+}
+
+header nav ul::before{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: #a10a0a00;
+    top: -31px;
+    right: -6px;
+    border: 10px solid;
+    border-color: transparent transparent #efefef transparent;
+}
+
+.pop:hover + nav , nav:hover{
+    display: flex;
+}
+
+header img{
+    width:62px;
+    margin-left: 13%;
+}
+
+header nav{
+    display: flex;
+    height: 195px;
+    background-color: #efefef;
+    width: 197px;
+    position: absolute;
+    right: 13%;
+    top: 61px;
+    flex-wrap: wrap;
+    padding: 12px;
+    display: none;
+}
+
+/* min-width:---- */
+header nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    position: relative;
+}
+
+header nav ul li{
+    display: inline-block;
+    width:100%;
+    transition: .5s;
+}
+
+header nav ul li:hover{
+    margin-left: 10px;
+}
+
+
+/* border better */
+hr{
+    color: #d1d1d196;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    width:100%;
+    display: inline-block;
+    padding: 7px;
+}
+
+/* Landing */
+
+
+.landing{
+    background-image: url(images/landing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:91vh;
+    /* calc(100vh - heading height) */
+}
+
+/* center by position */
+.landing .welcome{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height:20%;
+}
+
+h1{
+    width:100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color:#10cab7;
+}
+
+/* max-width:100% / width:###px to be resposive*/
+.welcome p{
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 19px;
+}
+
+
+/* Features Section */
+
+.features{
+    flex-wrap: wrap;
+    min-height:350px;
+    background-color: #f6f6f6;
+}
+
+.features .center-flex{
+    display: grid;
+    width:80%;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-column-gap: 30px;
+}
+
+.center-flex div{
+    text-align: center;
+    height:210px;
+}
+
+.center-flex div p{
+    line-height: 30px;
+    width:80%;
+    margin: auto;
+    color:#777;
+    font-size: 17px;
+}
+
+.center-flex div i{
+    color: #10cab7;
+}
+
+.center-flex div h3{
+    margin: 25px auto;
+    min-width:277px;
+    font-weight: 900;
+}
+
+
+/* Services */
+
+.services{
+    min-height:70vh;
+    flex-wrap: wrap;
+}
+
+
+.head{
+    height: 20%;
+    margin: 80px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.head h3{
+    font-size: 90px;
+    font-weight: 900;
+    letter-spacing: -5px;
+    color: #ebeced;
+}
+
+.head p{
+    margin-top: -35px;
+    font-size: 21px;
+    color: #797979;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:". one one one two two two image image image ."
+                        ". three three three four four four image image image .";
+    height: 73%;
+    width:90%;
+    grid-column-gap: 20px;
+}
+
+.content div{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.content div i{
+    color: #10cab7;
+    width:42px;
+}
+
+.content div h3{
+    width: 60%;
+    margin-left: 5%;
+}
+
+.content div p{
+    width: 91%;
+    margin-left: 17%;
+    line-height: 1.6;
+    color: #8c8a8a;
+    margin-top: 10px;
+}
+
+
+.one , .two{
+    margin-bottom: 60px;
+}
+
+
+.one{
+    grid-area: one;
+}
+
+.two{
+    grid-area: two;
+}
+
+.three{
+    grid-area: three;
+}
+
+.four{
+    grid-area: four;
+}
+
+.image{
+    grid-area: image;
+    background-image: url(images/services.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 73%;
+    margin-left: 60px;
+    position: relative;
+}
+
+.image::before{
+    content: '';
+    /* Calc(100% + 100px) */
+    height:130%;
+    width:36%;
+    background-color: #194c47;
+    position: absolute;
+    right:0;
+    /* top:-50px; */
+    top:0;
+    transform: translate(50% , -11%);
+    z-index: -1;
+}
+
+
+/* Portfolio */
+
+
+.portfolio{
+    background-color: #f6f6f6;
+    min-height:95vh;
+    flex-wrap: wrap;
+}
+
+.portfolio .content-port{
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-areas:". one-port one-port one-port two-port two-port two-port three-port three-port three-port .";
+    margin-top:-100px;
+    grid-column-gap: 33px;
+    width:90%;
+    height:54%;
+}
+
+
+.portfolio .content-port div img{
+    width:100%;
+}
+
+.portfolio .content-port h3{
+    padding: 10px 15px;
+}
+
+.portfolio .content-port p{
+    padding: 0px 15px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.portfolio .content-port div{
+    background-color: white;
+}
+
+.portfolio .head{
+    margin:0;
+    margin-top: -40px;
+}
+
+.one-port{
+    grid-area: one-port;
+}
+
+.two-port{
+    grid-area: two-port;
+}
+
+.three-port{
+    grid-area: three-port;
+}
+
+
+/* About */
+
+.about{
+    min-height:107vh;
+    flex-wrap: wrap;
+}
+
+.about .head{
+    margin:0;
+    margin-top: 18px;
+}
+
+.about .content-about{
+    display: grid;
+    grid-template-columns: repeat(11 , 1fr);
+    grid-template-areas: ". image-about image-about image-about . paras paras paras paras paras .";
+    height:53%;
+    width:93%;
+    margin-bottom: 6%;
+}
+
+/* you can make the resolution of the div = the resolution of the image (better) */
+.image-about{
+    grid-area: image-about;
+    background-image: url(images/about.jpg);
+    background-size: cover;
+    width:73%;
+    position: relative;
+}
+
+/* you can use hr */
+.image-about::before{
+    content: '';
+    position: absolute;
+    height:120%;
+    width:36%;
+    background-color:#ebeced;
+    top:0;
+    left:0;
+    transform: translate(-20% , -8.5%);
+    z-index: -1;
+}
+
+.image-about::after{
+    content: '';
+    position: absolute;
+    height:102%;
+    width:30%;
+    background-color:#10cab7;
+    bottom:7.5%;
+    right:0;
+    transform: translate(35% , 0);
+    z-index: -1;
+}
+
+.paras{
+    grid-area: paras;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.paras p{
+    line-height: 2;
+}
+
+.paras p:first-child{
+    margin-top: 8%;
+    font-weight: bold;
+}
+
+.paras p:last-child{
+    margin-bottom: 12%;
+    color: #777;
+    position: relative;
+}
+
+.paras p:last-child::after{
+    content: '';
+    position: absolute;
+    width:50%;
+    height:2px;
+    background-color: #10cab7;
+    top:-28%;
+    left:0;
+}
+
+
+.paras p:last-child::before{
+    content: '';
+    position: absolute;
+    width:18%;
+    height:90%;
+    background-color: #10cab7;
+    bottom: -46px;
+    left:-203px;
+}
+
+/* Contact */
+
+.contact{
+    background-color: #f6f6f6;
+    flex-wrap: wrap;
+    height:70vh;
+    align-content: space-around;
+}
+
+.contact .head{
+    margin: 55px 0 100px;
+}
+
+.contact .content-contact{
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+.contact .content-contact h2:first-of-type{
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color:#2c4755;
+}
+
+.contact .content-contact a{
+    font-size: 35px;
+    font-weight: 800;
+    color:#10cab7;
+    margin-bottom: 20px;
+}
+
+.contact .content-contact h3{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+.contact .content-contact i{
+    margin-right: 5px;
+}
+
+
+/* Footer */
+
+
+footer{
+    width:100%;
+    padding: 30px;
+    text-align: center;
+    background-color: #2c4755;
+    color:white;
+}
+
+footer span{
+    color: #10cab7;
+}
+
+/* Media Queries */
+
+@media (max-width:1200px){
+    .content .image{
+        display: none;
+    }
+    .content{
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:". one one one one one two two two two two ."
+                            ". three three three three three four four four four four .";
+        min-height: 73%;
+        min-width:90%;
+    }
+}
+
+@media (max-width:992px){
+    .about .head{
+        margin: 50px 0 100px;
+    }
+    .about .content-about{
+        grid-template-columns: repeat(10 , 1fr);
+        grid-template-rows: repeat(2 , 1fr);
+        grid-template-areas:". . image-about image-about image-about image-about image-about image-about . ."
+                            ". paras paras paras paras paras paras paras paras .";
+        justify-items: center;
+        grid-row-gap: 15px;
+    }
+    .paras p:last-child::after{
+        width:50%;
+        left:50%;
+        top:-17%;
+        transform: translateX(-50%);
+    }
+    .paras p:last-child::before{
+        display: none;
+    }
+    .image-about::before{
+        display: none;
+    }
+    .image-about::after{
+        display: none;
+    }
+    .paras p{
+        text-align: center;
+    }
+    .paras p:first-child{
+        margin-bottom: 60px;
+    }
+    .image-about{
+        margin-left: 14px;
+        width:260px;
+    }
+}
+
+@media (max-width:767px) {
+    .features .center-flex{
+        grid-template-columns: 1fr;
+        padding: 60px 0 20px;
+    }
+    .center-flex div{
+        width:100%;
+        margin-bottom: 60px;
+    }
+    .content{
+        width:100%;
+    }
+}
+
+@media (max-width:700px) {
+    .content{
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:". one one one one one one one one one one ."
+                            ". two two two two two two two two two two ."
+                            ". three three three three three three three three three three ."
+                            ". four four four four four four four four four four .";
+    }
+    .content div p{
+        margin-left: 0;
+        width:100%;
+    }
+    .content div{
+        text-align: center;
+        justify-content: center;
+    }
+    .content div i{
+        width:100%;
+        margin-bottom: 20px;
+    }
+    .content div h3{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width:667px) {
+    .portfolio .content-port{
+        grid-template-rows: repeat(3 , 1fr);
+        grid-template-areas:
+                            ". one-port one-port one-port one-port one-port one-port one-port one-port one-port ."
+                            ". two-port two-port two-port two-port two-port two-port two-port two-port two-port ."
+                            ". three-port three-port three-port three-port three-port three-port three-port three-port three-port .";
+        width:100%;
+        grid-row-gap: 30px;
+    }
+    .portfolio .head{
+        margin:50px 0 170px;
+    }
+    .portfolio{
+        padding-bottom: 50px;
+    }
+    .portfolio .content-port p{
+        padding: 15px;
+    }
+    .image-about{
+        margin-left: 0px;
+    }
+}
+
+
+@media  (min-width:767px){
+    .center-flex div p{
+        margin: 0;
+        width:100%;
+    }
+}
+
+@media (min-width:767px) and (max-width:992px){
+    .features .center-flex{
+        grid-template-columns: repeat(2 , 1fr);
+        padding: 60px 0 20px;
+    }
+    .center-flex div{
+        margin-bottom: 60px;
+    }
+    .content{
+        width:100%;
+    }
+    .content div{
+        min-width: 335px;
+    }
+}
+
+@media (min-width:400px) {
+    .welcome p{
+        width: 355px;
+    }
+}
+
+@media (min-width:667px) {
+    .portfolio .content-port{
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2 , 1fr);
+        grid-template-areas:
+                            "one-port one-port one-port one-port one-port one-port two-port two-port two-port two-port two-port two-port"
+                            "three-port three-port three-port three-port three-port three-port . . . . . .";
+        width:100%;
+        grid-row-gap: 30px;
+        padding: 20px 20px 60px;
+    }
+    .portfolio .head{
+        margin:50px 0 140px;
+    }
+    .portfolio .content-port p{
+        padding: 15px;
+    }
+}
+
+@media (min-width:701px) {
+    .portfolio{
+        margin-top: -60px;
+    }
+}
+
+@media  (min-width:992px){
+    .center-flex div p{
+        width:80%;
+        margin: auto;
+    }
+    .features .center-flex{
+        width:88%;
+    }
+    .portfolio .content-port{
+        grid-template-columns: repeat(11 , 1fr);
+        grid-template-areas:". one-port one-port one-port two-port two-port two-port three-port three-port three-port .";
+        width:100%;
+    }
+    .portfolio{
+        height: 100vh;
+    }
+    .portfolio .head{
+        margin-bottom: 0px ;
+        margin-top: 10px;
+    }
+    .image-about{
+        width:250px;
+        height:375px;
+    }
+    .paras p:last-child::before{
+        display: none;
+    }
+    .paras p:last-child::after{
+        top:-20px;
+    }
+    .image-about{
+        margin-right: 150px;
+        margin-left: 20px;
+    }
+    .image-about::after{
+        height: 79%;
+        width: 50%;
+        background-color: transparent;
+        bottom: 9.5%;
+        right: -88px;
+        border-left: 80px solid #10cab7;
+        border-bottom: 80px solid #10cab7;
+    }
+    .paras p:last-child{
+        margin-top: 40px;
+    }
+    .about .content-about{
+        grid-template-areas: "image-about image-about image-about image-about . paras paras paras paras paras paras";
+    }
+}
+
+@media  (min-width:1200px){
+    .features .center-flex{
+        width:80%;
+    }
+}
+
+@media (min-width:1400px) {
+    .about .content-about{
+        grid-template-areas: ". image-about image-about image-about . paras paras paras paras paras .";
+    }
+    .portfolio .content-port{
+        margin-top: -170px;
+    }
+    .portfolio .head{
+        margin-top: -40px;
+    }
+}
+
+
